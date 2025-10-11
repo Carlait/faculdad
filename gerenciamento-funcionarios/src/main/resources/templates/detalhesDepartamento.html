@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Departamento</title>
+</head>
+<body>
+    <h1>Detalhes do Departamento</h1>
+
+    <div>
+        <strong>ID:</strong>
+        <span th:text="${departamento.id}"></span>
+    </div>
+    <div>
+        <strong>Nome:</strong>
+        <span th:text="${departamento.nome}"></span>
+    </div>
+    <div>
+        <strong>Localização:</strong>
+        <span th:text="${departamento.localizacao}"></span>
+    </div>
+
+    <br/>
+
+    <h2>Funcionários neste Departamento</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="funcionario : ${departamento.funcionarios}">
+                <td th:text="${funcionario.id}"></td>
+                <td th:text="${funcionario.nome}"></td>
+                <td th:text="${funcionario.email}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br/>
+    <a th:href="@{/departamentos}">Voltar para a Lista de Departamentos</a>
+</body>
+</html>

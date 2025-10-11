@@ -1,6 +1,6 @@
-package br.com.empresa.gerenciamento-funcionarios.repository;
+package br.com.empresa.gerenciamentofuncionarios.repository;
 
-import br.com.empresa.gerenciamento-funcionarios.model.Departamento;
+import br.com.empresa.gerenciamentofuncionarios.model.Departamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DepartamentoRepository extends JpaRepository<Departamento, Long> {

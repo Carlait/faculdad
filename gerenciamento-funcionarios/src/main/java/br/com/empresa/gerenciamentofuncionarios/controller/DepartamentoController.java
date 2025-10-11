@@ -1,7 +1,7 @@
-package br.com.empresa.gerenciamento-funcionarios.controller;
+package br.com.empresa.gerenciamentofuncionarios.controller;
 
-import br.com.empresa.gerenciamento-funcionarios.model.Departamento;
-import br.com.empresa.gerenciamento-funcionarios.repository.DepartamentoRepository;
+import br.com.empresa.gerenciamentofuncionarios.model.Departamento;
+import br.com.empresa.gerenciamentofuncionarios.repository.DepartamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

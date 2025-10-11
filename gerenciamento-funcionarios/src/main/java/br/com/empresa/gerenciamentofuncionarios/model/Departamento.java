@@ -1,4 +1,4 @@
-package br.com.empresa.gerenciamento-funcionarios.model;
+package br.com.empresa.gerenciamentofuncionarios.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
