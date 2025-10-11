@@ -61,7 +61,7 @@ Passo a passo para executar a aplicação
     Clone o repositório:
     Bash
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Carlait/faculdad.git
 cd seu-repositorio
 
 Configuração do Banco de Dados
@@ -78,6 +78,10 @@ Bash
     Acesse a aplicação:
 
         Interface Web: Abra seu navegador e acesse http://localhost:8080/web/
+        Novo Funcionário: http://localhost:8080/web/funcionarios/novo
+        Lista de Funcionários: http://localhost:8080/web/funcionarios
+        Novo Departamento: http://localhost:8080/web/departamentos/novo
+        Lista de Departamentos: http://localhost:8080/web/departamentos
 
         Console H2 (para testes): Para visualizar o banco de dados em memória, acesse http://localhost:8080/h2-console. Utilize as credenciais definidas em application-test.properties.
 
