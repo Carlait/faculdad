@@ -11,7 +11,7 @@ import lombok.Data;
 public class Departamento {
 
     @Id
-    @GeneratedValue(Strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

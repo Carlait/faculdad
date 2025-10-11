@@ -1,4 +1,4 @@
-package br.com.empresa.gerenciamento_funcionarios;
+package br.com.empresa.gerenciamentofuncionarios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
