@@ -8,7 +8,7 @@
 <body>
     <h1>Lista de Funcionários</h1>
 
-    <a th:href="@{/funcionarios/novo}">Adicionar Novo Funcionário</a>
+    <a th:href="@{/web/funcionarios/novo}">Adicionar Novo Funcionário</a>
     <br/><br/>
 
     <table border="1">
@@ -30,14 +30,14 @@
                 <td th:text="${funcionario.dataAdmissao}"></td>
                 <td th:text="${funcionario.departamento?.nome}"></td>
                 <td>
-                    <a th:href="@{/funcionarios/editar/{id}(id=${funcionario.id})}">Editar</a>
-                    <a th:href="@{/funcionarios/excluir/{id}(id=${funcionario.id})}">Excluir</a>
+                    <a th:href="@{/web/funcionarios/editar/{id}(id=${funcionario.id})}">Editar</a>
+                    <a th:href="@{/web/funcionarios/excluir/{id}(id=${funcionario.id})}">Excluir</a>
                 </td>
             </tr>
         </tbody>
     </table>
 
     <br/>
-    <a th:href="@{/}">Voltar para a Home</a>
+    <a th:href="@{/web/}">Voltar para a Home</a>
 </body>
 </html>

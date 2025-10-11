@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/web")
 public class WebController {
 
     @Autowired
@@ -41,7 +43,7 @@ public class WebController {
     @PostMapping("/departamentos/salvar")
     public String salvarDepartamento(@ModelAttribute Departamento departamento) {
         departamentoRepository.save(departamento);
-        return "redirect:/departamentos";
+        return "redirect:/web/departamentos";
     }
 
     @GetMapping("/departamentos/editar/{id}")
@@ -55,7 +57,7 @@ public class WebController {
     @GetMapping("/departamentos/excluir/{id}")
     public String excluirDepartamento(@PathVariable Long id) {
         departamentoRepository.deleteById(id);
-        return "redirect:/departamentos";
+        return "redirect:/web/departamentos";
     }
 
     @GetMapping("/funcionarios")
@@ -74,7 +76,7 @@ public class WebController {
     @PostMapping("/funcionarios/salvar")
     public String salvarFuncionario(@ModelAttribute Funcionario funcionario) {
         funcionarioRepository.save(funcionario);
-        return "redirect:/funcionarios";
+        return "redirect:/web/funcionarios";
     }
 
     @GetMapping("/funcionarios/editar/{id}")
@@ -89,7 +91,7 @@ public class WebController {
     @GetMapping("/funcionarios/excluir/{id}")
     public String excluirFuncionario(@PathVariable Long id) {
         funcionarioRepository.deleteById(id);
-        return "redirect:/funcionarios";
+        return "redirect:/web/funcionarios";
     }
 
     @GetMapping("/departamentos/detalhes/{id}")

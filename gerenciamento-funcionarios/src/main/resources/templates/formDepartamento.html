@@ -9,7 +9,7 @@
     <h1 th:if="${departamento.id == null}">Adicionar Novo Departamento</h1>
     <h1 th:unless="${departamento.id == null}">Editar Departamento</h1>
 
-    <form th:action="@{/departamentos/salvar}" th:object="${departamento}" method="post">
+    <form th:action="@{/web/departamentos/salvar}" th:object="${departamento}" method="post">
         <input type="hidden" th:field="*{id}" />
         
         <div>
@@ -26,6 +26,6 @@
     </form>
 
     <br/>
-    <a th:href="@{/departamentos}">Voltar para a Lista</a>
+    <a th:href="@{/web/departamentos}">Voltar para a Lista</a>
 </body>
 </html>

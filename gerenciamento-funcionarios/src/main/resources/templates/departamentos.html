@@ -8,7 +8,7 @@
 <body>
     <h1>Lista de Departamentos</h1>
 
-    <a th:href="@{/departamentos/novo}">Adicionar Novo Departamento</a>
+    <a th:href="@{/web/departamentos/novo}">Adicionar Novo Departamento</a>
     <br/><br/>
 
     <table border="1">
@@ -26,15 +26,15 @@
                 <td th:text="${departamento.nome}"></td>
                 <td th:text="${departamento.localizacao}"></td>
                 <td>
-                    <a th:href="@{/departamentos/editar/{id}(id=${departamento.id})}">Editar</a>
-                    <a th:href="@{/departamentos/excluir/{id}(id=${departamento.id})}">Excluir</a>
-                    <a th:href="@{/departamentos/detalhes/{id}(id=${departamento.id})}">Detalhes</a>
+                    <a th:href="@{/web/departamentos/editar/{id}(id=${departamento.id})}">Editar</a>
+                    <a th:href="@{/web/departamentos/excluir/{id}(id=${departamento.id})}">Excluir</a>
+                    <a th:href="@{/web/departamentos/detalhes/{id}(id=${departamento.id})}">Detalhes</a>
                 </td>
             </tr>
         </tbody>
     </table>
 
     <br/>
-    <a th:href="@{/}">Voltar para a Home</a>
+    <a th:href="@{/web/}">Voltar para a Home</a>
 </body>
 </html>
