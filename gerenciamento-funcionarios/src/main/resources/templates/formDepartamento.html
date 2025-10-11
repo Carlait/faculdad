@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Departamento</title>
+</head>
+<body>
+    <h1 th:if="${departamento.id == null}">Adicionar Novo Departamento</h1>
+    <h1 th:unless="${departamento.id == null}">Editar Departamento</h1>
+
+    <form th:action="@{/departamentos/salvar}" th:object="${departamento}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" th:field="*{nome}" required />
+        </div>
+        <br/>
+        <div>
+            <label for="localizacao">Localização:</label>
+            <input type="text" id="localizacao" th:field="*{localizacao}" required />
+        </div>
+        <br/>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <br/>
+    <a th:href="@{/departamentos}">Voltar para a Lista</a>
+</body>
+</html>

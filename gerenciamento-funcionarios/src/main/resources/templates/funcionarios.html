@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Funcionários</title>
+</head>
+<body>
+    <h1>Lista de Funcionários</h1>
+
+    <a th:href="@{/funcionarios/novo}">Adicionar Novo Funcionário</a>
+    <br/><br/>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Data de Admissão</th>
+                <th>Departamento</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="funcionario : ${funcionarios}">
+                <td th:text="${funcionario.id}"></td>
+                <td th:text="${funcionario.nome}"></td>
+                <td th:text="${funcionario.email}"></td>
+                <td th:text="${funcionario.dataAdmissao}"></td>
+                <td th:text="${funcionario.departamento?.nome}"></td>
+                <td>
+                    <a th:href="@{/funcionarios/editar/{id}(id=${funcionario.id})}">Editar</a>
+                    <a th:href="@{/funcionarios/excluir/{id}(id=${funcionario.id})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br/>
+    <a th:href="@{/}">Voltar para a Home</a>
+</body>
+</html>
