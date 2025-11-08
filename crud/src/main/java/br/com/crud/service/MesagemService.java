@@ -1,6 +1,8 @@
 package br.com.crud.service;
 
 import br.com.crud.model.Mensagem;
+import br.com.crud.repository.MensagemRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,36 +13,39 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class MensagemService {
 
-    private final List<Mensagem> mensagens = new ArrayList<>();
-    private final AtomicInteger contadorId = new AtomicInteger();
+    @Autowired
+    private MensagemRepository mensagemRepository;
 
     public List<Mensagem> listarTodas() {
-        return mensagens;
+        return mensagemRepository.findAll();
     }
 
     public Optional<Mensagem> buscarPorId(int id) {
-        return mensagens.stream()
-                .filter(m -> m.getId() == id)
-                .findFirst();
+        return mensagemRepository.findById(id);
     }
 
     public Mensagem adicionar(Mensagem mensagem) {
-        mensagem.setId(contadorId.incrementAndGet());
-        mensagens.add(mensagem);
-        return mensagem;
+        return mensagemRepository.save(mensagem);
     }
 
     public Optional<Mensagem> atualizar(int id, Mensagem mensagemAtualizada) {
-        Optional<Mensagem> mensagemExistente = buscarPorId(id);
+        Optional<Mensagem> mensagemExistente = mensagemRepository.findById(id);
         
-        mensagemExistente.ifPresent(m -> {
+        if (mensagemExistente.isPresent()) {
+            Mensagem m = mensagemExistente.get();
             m.setTexto(mensagemAtualizada.getTexto());
-        });
-        
-        return mensagemExistente;
+            return Optional.of(mensagemRepository.save(m)); 
+        } else {
+            return Optional.empty();
+        }
     }
 
     public boolean remover(int id) {
-        return mensagens.removeIf(m -> m.getId() == id);
+        if (mensagemRepository.existsById(id)) {
+            mensagemRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

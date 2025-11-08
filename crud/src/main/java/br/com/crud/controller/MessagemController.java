@@ -49,7 +49,7 @@ public class MensagemController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> removerMensagem(@PathVariable int id) {
+    public ResponseEntity<Void> removerMensagem(@PathVariable Long id) {
         boolean removido = mensagemService.remover(id);
 
         if (removido) {
