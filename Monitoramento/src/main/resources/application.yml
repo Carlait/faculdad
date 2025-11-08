@@ -1,0 +1,13 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, metrics
+  metrics:
+    tags:
+      application: pedido-service
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
