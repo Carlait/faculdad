@@ -1,0 +1,8 @@
+com\example\sistemaacademico\controller\CursoController.class
+com\example\sistemaacademico\repository\CursoRepository.class
+com\example\sistemaacademico\model\Aluno.class
+com\example\sistemaacademico\controller\AlunoController.class
+com\example\sistemaacademico\SistemaAcademicoApplication.class
+com\example\sistemaacademico\model\Curso.class
+com\example\sistemaacademico\config\SecurityConfig.class
+com\example\sistemaacademico\repository\AlunoRepository.class

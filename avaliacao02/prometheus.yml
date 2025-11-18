@@ -1,0 +1,7 @@
+global:
+  [cite_start]scrape_interval: 15s # [cite: 108]
+scrape_configs:
+  - [cite_start]job_name: 'spring-boot-app' # [cite: 110]
+    [cite_start]metrics_path: '/actuator/prometheus' # [cite: 111]
+    static_configs:
+      - [cite_start]targets: ['host.docker.internal:8080'] # [cite: 113]

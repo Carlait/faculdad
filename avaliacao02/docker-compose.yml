@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  [cite_start]prometheus: # [cite: 92]
+    [cite_start]image: prom/prometheus # [cite: 93]
+    volumes:
+      - [cite_start]./prometheus.yml:/etc/prometheus/prometheus.yml # [cite: 95]
+    ports:
+      - [cite_start]"9090:9090" # [cite: 97]
+  [cite_start]grafana: # [cite: 98]
+    [cite_start]image: grafana/grafana # [cite: 99]
+    ports:
+      - [cite_start]"3000:3000" # [cite: 101]
+    volumes:
+      - [cite_start]grafana-storage:/var/lib/grafana # [cite: 103]
+volumes:
+  [cite_start]grafana-storage: # [cite: 105]
